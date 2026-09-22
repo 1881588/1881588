@@ -110,10 +110,7 @@ function calculate(){
     return;
   }
 
-  const diff = Math.round((actual - roundedRequired) * 10) / 10;
-  document.getElementById("actualResult").textContent = money(actual);
-  document.getElementById("difference").textContent =
-    diff >= 0 ? "多 " + money(diff) : "少 " + money(Math.abs(diff));
+  const diff = Math.max(0, Math.round((roundedRequired - actual) * 10) / 10);
 }
 </script>
 </body>
